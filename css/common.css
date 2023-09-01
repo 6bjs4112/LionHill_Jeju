@@ -1,3 +1,14 @@
+
+
+@font-face {
+  font-family: 'SUIT-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{font-family: 'SUIT-Regular' !important;}
+
 body{height:4000px;}
 header {
   position: fixed;
@@ -157,6 +168,7 @@ footer .inner .foot_btm .copy address span{
 }
 
 .header_image_word > p {
+  font-family: 'SUIT-Regular'!important;
   font-size: 25px;
   padding-top: 10px;
 }

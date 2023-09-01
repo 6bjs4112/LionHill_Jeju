@@ -241,3 +241,34 @@ body {
     margin-bottom: 10px;
   }
 }
+
+
+
+/* 수정한 것 */
+.reser_sec2_cal .select_date{
+  white-space: nowrap !important;
+}
+button.select_room{
+  outline: 1px solid #eff299;
+  padding: 2px 0;
+  transition: .2s;
+  
+  &:hover{
+    background-color: #eff299 !important;
+    color: #112619 !important;
+  }
+}
+
+
+
+a.btn_search{
+  outline: 1px solid #eff299;
+  padding: 10px;
+  transition: .2s;
+  
+  &:hover{
+    background-color: #eff299 !important;
+    color: #112619 !important;
+  }
+}
+

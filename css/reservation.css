@@ -2,8 +2,10 @@
 @import url(../common/reset.css);
 @import url(../common/common.css);
 @font-face {
-  font-family: "ChosunGu";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff");
+  font-family: 'SUIT-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 .title2 {
   font-size: 25px;
@@ -12,7 +14,7 @@
 }
 
 * {
-  font-family: "ChosunGu";
+  font-family: "SUIT-Regular" !important;
 }
 
 body {

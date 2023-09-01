@@ -1,0 +1,211 @@
+//아이콘 //오른쪽 왼쪽 화살표
+@import url('https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css'); 
+
+//------------------------------------------------------------
+@mixin flex($x: center, $y: center){
+    display: flex; justify-content: $x; align-items: $y;
+    @content;
+}
+@mixin font($x: inherit, $y: inherit, $z: inherit){
+    font-size: $x;
+    font-weight: $y;
+    color: $z;
+}
+@mixin spaceTxt(){
+    letter-spacing: 200%;
+}
+@mixin text(){
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
+@mixin English(){
+    font-family: 'Montserrat', 'Times New Roman', Times, serif;
+  }
+$mainColor: #23402A;
+$subColor1: #112619;
+$subColor2: #EFF299;
+//------------------------------------------------------------
+
+*{
+    box-sizing: border-box;
+    font-family: 'inter', 'Sans-Serif';
+}
+html{
+    // font-size: 16px;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+//------------------------------------------------------------
+
+section.event{
+    margin: 148px 183px !important;
+    transition: .2s margin;
+    @media (max-width: 1440px) {
+        margin: 148px 100px !important;
+    }
+    
+    @media (max-width: 950px) {
+        margin: 148px 50px !important;
+    }
+
+    .event_sec1_word{
+        margin-bottom: 33px;
+        h2{
+            margin-left: 50px;
+            @include font(2.1875rem, bold, $mainColor);
+            @media(max-width: 1440px) {
+                font-size: 2.1875rem;
+            }
+            @media(max-width: 950px) {
+                font-size: 2rem;
+                margin-left: 0;
+                text-align: center;
+            }
+            @media(max-width: 700px){
+                font-size: 1.5rem;
+            }
+            white-space: nowrap;
+        }
+
+    }//event_sec1_word
+
+    .event_sec1_pic{
+        position: relative; top: 0; left: 0;
+        width: 100%; height: 50vw; max-height: 700px;
+        // outline: 5px solid red;
+
+        .mySwiperEvent{
+            position: absolute; left: 50%; top: 0; transform: translateX(-50%);
+            // outline: 1px solid red;
+            width: calc(100% - 100px); height: calc(100% + 10px);
+            overflow: hidden;
+
+            ul.swiper-wrapper{
+                transform: translatey(-50%);
+                width: 100%; height: 100%;
+                @include flex(flex-start, flex-start){};
+                
+
+                li.swiper-slide{
+                    // outline: 1px solid red;
+                    width: 100%; height: calc(100% - 10px);
+                    flex-shrink: 0;
+                    cursor: pointer;
+                    @include flex(space-between){flex-direction: column; row-gap: 20px;}
+                    
+                    a{ 
+                        // outline: 1px solid red;
+                        display: inline-block;
+                        position: relative; top: 0; left: 0;
+                        width: 100%; height: 50%;
+                        box-shadow: 0px 5px 5px rgba(0,0,0,.2);
+                        overflow: hidden;
+                        
+                        figure{
+                            width: 100%; height: 100%;
+                            .bg{
+                                position: absolute; top: 0; left: 0; z-index: 1;
+                                width: 100%; height: 100%;
+                                @include flex(){flex-direction: column};
+                                @include font(1rem, inherit, white);
+                                opacity: 0;
+
+                                transition: .2s;
+
+
+                                background-color: rgba(0,0,0,0.6);
+                                span{
+                                    @include text();
+                                    text-align: center;
+                                    line-height: 120%;
+                                }
+                                span:nth-of-type(1){
+                                    margin-bottom: 7px;
+                                }
+                                span:nth-of-type(2){
+                                    font-size: .7rem;
+                                }
+                            }//.bg
+
+                            p{
+                                width: 100%; height: 100%;
+                                img{
+                                    width: 100%; height: 100%;
+                                    object-fit: cover; object-position: top;
+                                    transition: .2s;
+                                }
+                            }
+                        }//figure
+
+                        &:hover{
+                            .bg{
+                                opacity: 100%;
+                            }
+                            img{
+                                transform: scale(1.2);
+                            }
+                        }//&:hover
+                    }//a
+
+                }//li.swiper-slide
+
+                
+                
+            }//ul.swiper-wrapper
+
+            @media(max-width: 950px){
+                ul.swiper-wrapper{
+                    // flex-wrap: nowrap;
+
+                    li.swiper-slide{
+                        // height: 100%;
+                    }
+                }
+            }//@media(max-width: 900px)
+        }//mySwiperEvent
+        
+        .btnsWrapper{
+            position: absolute; top: 50%; left: 0; transform: translateY(-50%);
+            @include flex(space-between);
+            // outline: 1px solid red;
+            width: 100%; height: auto;
+
+            button{
+                //초기화
+                border: none;
+                background-color: transparent;
+
+                width: 50px; height: 50px;
+                // outline: 1px solid blue;
+                font-family: 'Material Symbols Outlined' !important;
+                @include font(2rem, bold, $mainColor);
+
+                cursor: pointer;
+
+
+            }
+
+        }
+        .swiper-pagination{
+            @include flex();
+            position: absolute; bottom: 0; left: 0; transform: translateY(200%);
+            width: 100%;
+            // outline: 1px solid red;
+
+            @include font(1.5rem, bold, $mainColor);
+            >span{
+                margin: 0 8px;
+            }
+            >span:nth-of-type(1){
+
+            }
+            >span:nth-of-type(2){
+
+            }
+        }
+    }//div.event_sec1_pic
+
+}//section.event

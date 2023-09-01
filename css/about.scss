@@ -5,9 +5,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0'); 
 
 //아이콘 //오른쪽 왼쪽 화살표
-@import url('https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css'); 
+@import url('https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css');
 
-//------------------------------------------------------------
+//폰트
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Noto+Sans+KR&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+//-------------------------------------------------------
 @mixin flex($x: center, $y: center){
     display: flex; justify-content: $x; align-items: $y;
     @content;
@@ -94,6 +103,8 @@ main{
                 @include spaceTxt();
                 margin: 0;
                 margin-bottom: 30px;
+
+                font-family: 'Lora', serif !important;
             }
             >p{
                 @include font(1.5625rem, 400, white);
@@ -101,6 +112,8 @@ main{
                 margin: 0;
                 margin-top: 17px;
                 line-height: calc(100% + 5px);
+
+                font-family: 'SUIT-Regular';
 
                 >br.mb{
                     display: none;
@@ -230,7 +243,7 @@ main{
                                 }
 
                                 >span.arrow{
-                                    font-family: 'Material Symbols Outlined';
+                                    font-family: 'Material Symbols Outlined' !important;
                                     display: inline-block;
                                 }//.arrow
                             }//h3
@@ -252,7 +265,7 @@ main{
                     margin-top: 40px;
 
                     >div.left, div.right{
-                        font-family: 'Material Symbols Outlined';
+                        font-family: 'Material Symbols Outlined' !important;
                         cursor: pointer;
                     }
 
